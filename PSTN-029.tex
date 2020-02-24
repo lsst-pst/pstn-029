@@ -1,7 +1,7 @@
 \documentclass[modern]{aastex62}
 
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
-\input{meta}
+%\input{meta}
 
 % Package imports go here.
 
@@ -16,7 +16,7 @@
 \begin{document}
 \input{authors}
 \date{\today}
-\title{Overview of LSST Education and Public Outreach}
+\title{The Vera C. Rubin Observatory Education and Public Outreach Program}
 \hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
 
 \input{abstract}
@@ -25,15 +25,15 @@
 
 \appendix
 % Remove this when you strart your paper
-% \input{appendix}
+\input{appendix}
 % Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
-% \section{References} \label{sec:bib}
+%\section{References} \label{sec:bib}
 \bibliographystyle{yahapj}
 \bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
 
 % Make sure lsst-texmf/bin/generateAcronyms.py is in your path
-\section{Acronyms} \label{sec:acronyms}
-\input{acronyms.tex}
+%\section{Acronyms} \label{sec:acronyms}
+%\input{acronyms.tex}
 
 \end{document}
