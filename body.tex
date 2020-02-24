@@ -1,23 +1,90 @@
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
-\section{Goals / Vision / Mission}
+Most existing EPO programs are designed to engage with people local to a telescope site and follow traditional press release models. (Part of the strategy of Rubin EPO design is to offer a national program that can be adopted at scale and achieve relevance with an international audience as well - {\it this is the case we want to make at the end of this section})\\
 
-\section{EPO Program}
-\subsection{Audiences}
-\subsection{Website}
-\subsubsection{Skyviewer}
-\subsubsection{Interactive Widgets}
-\subsection{Multimedia}
-\subsubsection{Planetarium Videos}
-\subsection{Citizen Science}
-\subsection{Formal Education}
-\subsubsection{User Testing}
+Below we give a couple examples of programs of existing online EPO programs and the web-based technology they use: Sloan Digital Sky Survey's (SDSS) SkyServer and Zooniverse's Citizen Science program ({\it should probably add another}).\\
 
-\section{LSST Science Community}
+For over 15 years, the SDSS has made its vast database freely accessible to the world via the web-based SDSS data browser, SkyServer. The query and analysis tools available through the SkyServer are designed to meet the needs of astronomers and non-professionals alike.  However, the large number of available features and the technical jargon that accompany them can overwhelm non-experts, as well as professional astronomers who are external to the SDSS collaboration.\\
 
-\section{Diversity and Inclusion}
+In order to better support non-specialist audiences, the SDSS Education and Public Outreach team developed activities with simplified query tools and smaller, curated datasets to facilitate activities for pre-college educators and students (e.g. SDSS Voyages). For non-specialist audiences, these activities lower the barrier to accessing the same authentic data, while providing an introduction to concepts related to both astronomy and data structures. For students and educators who may be interested in using the data for more advanced explorations, SDSS Voyages provides a helpful stepping stone to the full functionality of the SkyServer. \\
 
-\section{EPO Data Center}
+Citizen science represents an example of successful use of the modern age of web connectivity by directly engaging the public in scientific research. Online citizen science enables scientists to work with the general public to perform data-sorting and analysis tasks that are difficult or impossible to automate, or that would be insurmountable for a single person or for small groups of individuals to undertake [1]. Most participants from the public claim that the main reason they participate is the contribution they are making to fundamental science research [2]. Through online citizen science portals such as the Zooniverse [3], millions of volunteers have participated directly in this collaborative research experience, contributing to over 70 astronomy-based research papers. Another reason for the continued success of the Zooniverse platform in particular, is that it looks good and feels modern, even after a decade of activity. While professional astronomers are the PI's of citizen science projects, Zooniverse employs 13 developers, one designer, and two postdocs to lead the infrastructure development of the platform between the Adler Planetarium and Oxford, UK locations.\\
 
-\section{Communications Strategy}
+Members of the Zooniverse team have furthered the project's educational impact by developing a college-level data science curriculum around their crowd-sourced data. The NSF-funded Improving Undergraduate STEM Education (IUSE) Project: “Engaging Introductory Astronomy Students in Authentic Research through Citizen Science” (PI: L. Trouille) is a particularly successful example of scoping big-data astronomy for a college non-major audience. This innovative curriculum equips students with freely available web-based tools to explore the intrinsic and environmental properties of a large, curated sample of  SDSS galaxies with morphological classifications from Galaxy Zoo.  The curriculum empowers students to explore authentic data without requiring full-scale datasets or jargon-rich professional tools for visualization and analysis. \\
 
+{\it We should describe the full scope of Rubin EPO and maybe as an appendix add what work is serviced through OIR Lab} \\
+
+\textbf{This paper is meant to be a complete description of the Rubin Observatory EPO program. To facilitate reading, the paper is organized such that the high-level design of the program component is provided first and the detailed implementation of that design is described in the subsequent subsections.  In this way, we facilitate the finding of information most relevant to the reader.}
+
+\section{EPO Mission Statement and Goals}\label{sec:mission}
+The Rubin Observatory EPO's mission is to offer accessible and engaging online experiences that provide non-specialists access to, and context for, LSST data so anyone can explore the Universe and be part of the discovery process. \\
+
+Also outline some of the top level goals and outcomes that we have for the program to set the stage for how we define success.
+Suggested goals:
+\begin{enumerate}
+    \item Build and maintain public awareness of Rubin Observatory and its discoveries
+    \item Tell data stories that provide context for Rubin Observatory discoveries and capture the imagination of the public.
+    \item Bring Rubin Observatory data into classrooms to provide students authentic experiences with real data
+    \item Enable citizen science projects utilizing Rubin Observatory data so that any person can be part of the scientific process. 
+    \item Create a well-documented gallery of varied resources for science content creators at informal science centers, planetariums, and beyond to facilitate bringing Rubin Observatory to their audiences
+\end{enumerate}
+
+
+\section{EPO Program}\label{sec:program}
+In this section, we lay out the details of the Vera C. Rubin Observatory EPO program. At its core, our program focuses on identifying specific audiences, understanding their needs and goals with respect to the observatory, and building materials that meet these needs. The organization of this paper reflects that decision, defining first our key audiences and key messages before describing the materials built to serve them.
+
+{\bf add updated and better-looking deliverables chart}
+
+\subsection{Audiences}\label{sec:audiences}
+The EPO team has defined four key audiences who drive the content that comprises the program.  
+\begin{enumerate}
+    \item Science-interested general public (See Section \ref{sec:website})
+    \item Content creators at informal science centers and planetariums (See Section \ref{sec:multimedia})  
+    \item Citizen science principal investigators (See Section \ref{sec:citsci})
+    \item High school teachers and introductory college professors (See Section \ref{sec:edu})
+\end{enumerate}
+
+\subsection{Website}\label{sec:website}
+The website is the central repository of all EPO materials. This section will describe the content specific to the website as well as outline the decisions made in defining the site architecture and design. 
+
+\subsubsection{Skyviewer}\label{sec:skyviewer}
+The Skyviewer is the primary tool for the public to explore the all sky, color images produced by the survey. The vision of the Skyviewer is to provide a fun, intuitive, image-centric tool that provides pathways to engaging with Rubin Observatory discoveries. It's focus on meeting the needs of the general public make it distinct from both the Portal Aspect of the DM Science Platform as well as any other all sky visualization tool currently available.  In this section, we will define the vision of the Skyviewer, detail decisions we made about its design and user interface, and discuss the content built around the images themselves.
+
+\subsubsection{Interactive Widgets}\label{sec:widget}
+
+
+\subsection{Multimedia}\label{sec:multimedia}
+This section describes the multimedia LSST EPO will provide in accepted standards for formatting. The goal is to provide short, well-documented assets for creators to incorporate into any program they try to develop for our science center. 
+
+
+\subsection{Citizen Science}\label{sec:citsci}
+This section describes the strategy for Citizen Science from EPO.  ie. We constructed the system such that scientists can create image samples via the the tools in the Science Platform and seamlessly connect that sample with the Zooniverse infrastructure to create the project.  This strategy means EPO does not choose one or two projects and instead allows for any project to be created using any LSST data to maximize the science from Rubin Observatory Observations. 
+Astronomers looking for details of how to access this functionality within Science Platform should refer to the Science Platform paper initiated by DM.  (Amanda will contribute some paragraphs to that paper).
+
+\subsection{Formal Education}\label{sec:edu}
+The EPO team will produce online, data-driven classroom investigations for students in advanced middle school through college. This section will detail the rationale behind choosing this age group, technology, and topics. We will also describe the additional support materials provided for teachers and motivate their necessity. 
+
+\section{Diversity, Equity, and Inclusion}\label{sec:diversity}
+While respecting the rich traditions of astronomy, LSST EPO is committed to recognizing and taking action to disrupt the dominant cultural norms of STEM. In practice, this means creating and fostering environments that welcome and encourage the participation of those who have been minoritized by science. Here, we describe how we purposefully built and tested educational and outreach activities that consider the input, needs, and desires of minoritized populations.
+
+\section{Science Community}\label{sec:scicommunity}
+EPO will provide opportunities for members of the LSST Science Community to participate in education and outreach. This section outlines how astronomers can be involved in helping us create new content in Operations and what materials they will have available to them to assist in their independent EPO efforts. 
+
+\section{EPO Data Center}\label{sec:datacenter}
+The EPO Data Center will be the back-end infrastructure to provide data for all EPO materials, primary of which is the website. 
+Spikes in web traffic will follow references to LSST in media, science results, media references to citizen science projects, and social media references by popular individuals or organizations to a feature of the website. To accommodate these patterns, the EDC will follow best practices popularized by cloud computing: leveraging containers, infrastructure-as-code, and scalable architecture. 
+
+This section will motivate the choice of the Data Center as separate from the DM Data Access Center and the EPO Infrastructure paper will discuss the technological choices in detail. 
+
+\section{Communications Strategy}\label{sec:commsstrat}
+The EPO team has defined a comprehensive communications strategy comprised of high level goals and key messages all Rubin Observatory communications should work towards. This plan also encompasses detailed strategies for different forms of communication, their frequency, and how content will be developed in Operations. The main points of this strategy will be outlined here, including and emphasis on the usage of social media in addition to the traditional media practices like press releases. 
+
+
+\section{Evaluation}\label{sec:eval}
+
+This section describes how evaluation of the success of the program was built into its design and methods we will use for performing such evaluation. 
+
+We should make clear what the main outcomes are for our audiences, and describe how we strategically decided what information was important to track to understand whether the audiences achieved those outcomes.  We performed regular user testing during the process of construction to ensure we were reaching those goals, and during operations, we hire external evaluation services every three years, provide them with our collected data, and allow them to do their own data collection in order to provide and unbiased assessment at the success of the program.   
+
+\section{Conclusions}\label{sec:conclusions}
+Now we take a bow.
